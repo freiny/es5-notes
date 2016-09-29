@@ -35,6 +35,16 @@ console.log(
 );
 // OUTPUT: false false true
 
+console.log(
+	0 === false,
+	0 == false,
+	0 === null,
+	0 == null,
+	0 === undefined,
+	0 == undefined
+);
+// OUTPUT: false true false false false false
+
 var obj1 = {'key1': 'value1'};
 var obj2 = {'key1': 'value1'};
 var obj3 = obj1;
