@@ -25,3 +25,15 @@ for (var i=0; i<str.length; i++) {
 }
 console.log(s);
 // OUTPUT: 1-2
+
+loopLabel:{
+	while(true){
+		while(true){
+			while(true){
+				console.log('break out');
+				break loopLabel;
+			}
+		}
+	}
+}
+// OUTPUT: break out
