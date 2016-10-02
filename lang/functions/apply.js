@@ -5,10 +5,9 @@ console.log.apply(null, ['a', 1, 2.7]);
 
 function f() {
 	var args = [];
-	for (var i=0; i<arguments.length; i++) {
+	for (var i=0; i<arguments.length-1; i++) {
 		args.push(arguments[i]);
 	}
-	args.pop();
 	console.log.apply(null, args);
 }
 f(1,2,3,4);
@@ -18,14 +17,15 @@ f('a','b','c','d');
 
 var obj = {};
 obj.name = 'MyObj';
-obj.fn = function(a, b, c){
-	console.log(this.name, typeof a, typeof b);
+obj.fn = function(arg1, arg2){
+	console.log(this.name, arg1, arg2);
 };
 obj.fn(1, 'a');
-// OUTPUT: number string undefined
-obj.fn.apply(obj, [2, 'b']);
+// OUTPUT: MyObj 1 a
+obj.fn.apply(obj, [1, 'a']);
+// OUTPUT: MyObj 1 a
 
 var o = {};
 o.name = "MyO";
 obj.fn.apply(o, [3, 'c']);
-// OUTPUT: MyO number string
+// OUTPUT: MyO 3 c
