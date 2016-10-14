@@ -1,0 +1,21 @@
+USE mydb;
+
+CREATE TABLE USERS(
+   ID		INT						NOT NULL,
+   NAME	VARCHAR (32)	NOT NULL,
+   AGE	INT						NOT NULL,
+   PRIMARY KEY (ID)
+);
+
+CREATE TABLE PETS(
+   ID		INT						NOT NULL,
+   NAME	VARCHAR (32)	NOT NULL,
+   AGE	INT						NOT NULL,
+   PRIMARY KEY (ID)
+);
+
+SHOW TABLES;
+-- OUTPUT:
+-- Tables_in_mydb
+-- PETS
+-- USERS

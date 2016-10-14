@@ -1,0 +1,2 @@
+• Array.prototype— concat— every— filter— forEach— indexOf— join— lastIndexOfObjects— map
+— pop— push— reduce— reduceRight— reverse— shift— slice— some— sort— splice— toLocaleString— toString— unshift• Date.prototype— toJSON• Object.prototype• String.prototype— charAt— charCodeAt— concat— indexOf— lastIndexOf — localeCompare — match— replace— search— slice— split— substring— toLocaleLowerCase — toLocaleUpperCase — toLowerCase— toUpperCase— trim

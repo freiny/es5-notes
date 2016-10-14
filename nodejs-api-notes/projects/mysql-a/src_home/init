@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+
+# cd /src
+# echo "************************************"
+# npm install
+# npm start &
+# ps -ef
+# while inotifywait -e modify /src --recursive --exclude "npm-debug.log"; do
+# 	killall -9 node
+# 	echo "************************************"
+# 	npm start &
+# 	ps ef
+# done
