@@ -1,0 +1,53 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA
+echo "abcdefghijklmnopqrstuvwxyz" >> fileA
+ls -C
+# OUTPUT: fileA
+cat fileA
+# OUTPUT:
+# abcdefghijklmnopqrstuvwxyz
+
+ln -s fileA copyA
+ls -C
+# OUTPUT: copyA fileA
+cat copyA
+# OUTPUT:
+# abcdefghijklmnopqrstuvwxyz
+
+ls -l
+# OUTPUT:
+# lrwxrwxrwx    1 root     root             5 Oct 19 09:27 copyA -> fileA
+# -rw-r--r--    1 root     root            27 Oct 19 09:27 fileA
+
+echo "1234567890" >> copyA
+cat fileA
+# abcdefghijklmnopqrstuvwxyz
+# 1234567890
+ls -l
+# lrwxrwxrwx    1 root     root             5 Oct 19 09:27 copyA -> fileA
+# -rw-r--r--    1 root     root            38 Oct 19 09:27 fileA
+
+rm fileA
+ls -C
+# OUTPUT: copyA
+ls -l
+# OUTPUT:
+# lrwxrwxrwx    1 root     root             5 Oct 19 09:27 copyA -> fileA
+
+cat copyA
+# ERROR:
+# cat: can't open 'copyA': No such file or directory
+
+ls -C
+# OUTPUT: copyA
+echo "abc" >> copyA
+cat copyA
+# OUTPUT:
+# abc
+ls -C
+# OUTPUT: copyA fileA
