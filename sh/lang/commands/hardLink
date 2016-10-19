@@ -1,0 +1,53 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA
+echo "abcdefghijklmnopqrstuvwxyz" >> fileA
+ls -C
+# OUTPUT: fileA
+cat fileA
+# OUTPUT:
+# abcdefghijklmnopqrstuvwxyz
+
+ln fileA copyA
+ls -C
+# OUTPUT: copyA fileA
+cat copyA
+# OUTPUT:
+# abcdefghijklmnopqrstuvwxyz
+
+ls -l
+# OUTPUT:
+# -rw-r--r--    1 root     root            27 Oct 19 09:36 copyA
+# -rw-r--r--    1 root     root            27 Oct 19 09:36 fileA
+
+echo "1234567890" >> copyA
+cat fileA
+# abcdefghijklmnopqrstuvwxyz
+# 1234567890
+ls -l
+# -rw-r--r--    1 root     root            38 Oct 19 09:36 copyA
+# -rw-r--r--    1 root     root            38 Oct 19 09:36 fileA
+
+echo "1234567890" >> fileA
+cat fileA
+# abcdefghijklmnopqrstuvwxyz
+# 1234567890
+ls -l
+# -rw-r--r--    1 root     root            49 Oct 19 09:36 copyA
+# -rw-r--r--    1 root     root            49 Oct 19 09:36 fileA
+
+rm fileA
+ls -C
+# OUTPUT: copyA
+ls -l
+# OUTPUT:
+# -rw-r--r--    1 root     root            49 Oct 19 09:36 copyA
+
+echo "abc" >> copyA
+ls -l
+# OUTPUT:
+# -rw-r--r--    1 root     root            53 Oct 19 09:36 copyA
