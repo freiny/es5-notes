@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "hello world"
+
+pwd
+# OUTPUT: /src
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+pwd
+# OUTPUT: /src/testFolder
+
+uname -mrs
+# OUTPUT: Linux 4.4.22-moby x86_64
