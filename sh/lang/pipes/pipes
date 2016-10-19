@@ -1,0 +1,16 @@
+#!/bin/sh
+
+ps
+# OUTPUT:
+# PID   USER     TIME   COMMAND
+#   1   root     0:00   sh -c source /src/initHome
+# 194   root     0:00   sh -c source /src/main
+# 195   root     0:00   ps
+
+ps | grep 'initHome'
+# OUTPUT:
+#   1 root       0:00   sh -c source /src/initHome
+# 275 root       0:00   grep initHome
+
+ps | grep '[i]nitHome'
+# 1   root       0:00   sh -c source /src/initHome
