@@ -1,0 +1,17 @@
+bin
+	executable files that can be ran by users
+
+dev
+	devices
+
+etc
+	administrative files
+
+lib
+	library files, shared by many processes
+
+lost+found
+	holds files after a system crash
+
+tmp
+	extra buffer area for programs
