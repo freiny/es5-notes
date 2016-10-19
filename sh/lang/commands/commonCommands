@@ -1,0 +1,77 @@
+#!/bin/sh
+echo "hello world"
+# OUTPUT: hello world
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+mkdir folderA
+ls -C
+# OUTPUT: folderA
+
+mkdir folderB folderC folderD
+ls -C
+# OUTPUT: folderA folderB folderC folderD
+
+rm -rf folderD
+ls -C
+# OUTPUT: folderA folderB folderC
+
+touch fileA
+ls -C
+# OUTPUT: fileA folderA folderB folderC
+
+touch fileB fileC fileD
+ls -C
+# OUTPUT: fileA fileB fileC fileD folderA folderB folderC
+
+rm fileD
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC
+
+touch folderC/fileX
+cd folderC
+ls -C
+# OUTPUT: fileX
+
+cd ..
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC
+
+echo "hello file" >> fileA
+cat fileA
+# OUTPUT: hello file
+
+echo "hi file" >> fileA
+echo "hey file" >> fileA
+cat fileA
+# OUTPUT:
+# hello file
+# hi file
+# hey file
+
+touch testScript
+chmod 744 testScript
+echo "echo hello hello world" >> testScript
+./testScript
+./testScript
+# OUTPUT:
+# hello hello world
+# hello hello world
+
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC testScript
+mv testScript folderC
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC
+ls -C ./folderC
+# OUTPUT: fileX testScript
+
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC
+cp fileB ./folderC
+ls -C
+# OUTPUT: fileA fileB fileC folderA folderB folderC
+ls -C ./folderC
+# OUTPUT: fileB fileX testScript
