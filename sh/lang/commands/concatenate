@@ -1,0 +1,26 @@
+#!/bin/sh
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch a b c
+echo "hello" >> a
+echo "world" >> b
+
+cat a
+# OUTPUT: hello
+
+cat b
+# OUTPUT: world
+
+cat a b > c
+cat c
+# OUTPUT:
+# hello
+# world
+
+cat b a > c
+cat c
+# OUTPUT:
+# world
+# hello
