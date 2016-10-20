@@ -1,0 +1,35 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA
+echo "andy" >> fileA
+echo "sandy" >> fileA
+echo "randy" >> fileA
+echo "josie" >> fileA
+echo "rosie" >> fileA
+echo "ann" >> fileA
+echo "bob" >> fileA
+
+grep "" < fileA
+# OUTPUT:
+# andy
+# sandy
+# randy
+# josie
+# rosie
+# ann
+# bob
+
+grep "andy" < fileA
+# OUTPUT:
+# andy
+# sandy
+# randy
+
+grep "osie" < fileA
+# OUTPUT:
+# josie
+# rosie
