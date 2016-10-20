@@ -1,0 +1,20 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA
+ls -l
+# OUTPUT:
+# -rw-r--r--    1 root     root             0 Oct 20 07:51 fileA
+
+chmod u=x fileA
+ls -l
+# OUTPUT:
+# ---xr--r--    1 root     root             0 Oct 20 07:51 fileA
+
+chmod u=rwx,g=rw,o= fileA
+ls -l
+# OUTPUT:
+# -rwxrw----    1 root     root             0 Oct 20 07:51 fileA
