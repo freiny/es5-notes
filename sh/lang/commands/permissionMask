@@ -28,3 +28,31 @@ touch fileA
 ls -l
 # OUTPUT:
 # -r--------    1 root     root             0 Oct 20 07:51 fileA
+
+umask 0000
+mkdir folderA
+ls -l
+# drwxrwxrwx    2 root     root             68 Oct 20 07:51 folderA
+
+umask 0000
+mkdir folderA
+ls -l
+# drwxrwxrwx    2 root     root             68 Oct 20 07:51 folderA
+
+umask 0111
+rmdir folderA
+mkdir folderA
+ls -l
+# drw-rw-rw-    2 root     root             68 Oct 20 07:51 folderA
+
+umask 0222
+rmdir folderA
+mkdir folderA
+ls -l
+# dr-xr-xr-x    2 root     root             68 Oct 20 07:51 folderA
+
+umask 0444
+rmdir folderA
+mkdir folderA
+ls -l
+# d-wx-wx-wx    2 root     root             68 Oct 20 07:51 folderA
