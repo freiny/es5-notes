@@ -1,0 +1,40 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA
+echo "a" >> fileA
+echo "b" >> fileA
+echo "c d" >> fileA
+echo "e f" >> fileA
+echo "g h i" >> fileA
+echo "j k l" >> fileA
+
+cat fileA
+# OUTPUT:
+# a
+# b
+# c
+# e
+# g
+# j
+
+cut -d " " -f2 fileA
+# OUTPUT:
+# a
+# b
+# d
+# f
+# h
+# k
+
+cut -d " " -f3 fileA
+# OUTPUT:
+# a
+# b
+#
+#
+# i
+# l
