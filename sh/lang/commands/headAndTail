@@ -1,0 +1,26 @@
+#!/bin/sh
+head /etc/services
+# OUTPUT:
+# # /etc/services
+# #
+# # Network services, Internet style
+# #
+# # Note that it is presently the policy of IANA to assign a single well-known
+# # port number for both TCP and UDP; hence, most entries here have two entries
+# # even if the protocol doesn't support UDP operations.
+# #
+# # Some References:
+# # http://www.iana.org/assignments/port-numbers
+
+tail /etc/services
+# OUTPUT:
+# wnn4_Tw		22321/tcp	wnn6_Tw		# Wnn (Taiwanse input)
+# asp		27374/tcp			# Address Search Protocol
+# asp		27374/udp
+# tfido		60177/tcp			# Ifmail
+# tfido		60177/udp
+# fido		60179/tcp			# Ifmail
+# fido		60179/udp
+#
+# # Local services
+#
