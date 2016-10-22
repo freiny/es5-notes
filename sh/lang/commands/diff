@@ -1,0 +1,28 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA fileB
+
+echo "aa" >> fileA
+echo "bb1" >> fileA
+echo "cc" >> fileA
+echo "dd" >> fileA
+
+echo "aa" >> fileB
+echo "bb" >> fileB
+echo "cc" >> fileB
+echo "dz" >> fileB
+
+diff fileA fileB
+# --- fileA
+# +++ fileB
+# @@ -1,4 +1,4 @@
+#  aa
+# -bb1
+# +bb
+#  cc
+# -dd
+# +dz
