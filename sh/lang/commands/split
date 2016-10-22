@@ -1,0 +1,23 @@
+#!/bin/sh
+
+rm -rf testFolder
+mkdir testFolder
+cd testFolder
+
+touch fileA fileB
+echo "0123" >> fileA
+echo "01234567" >> fileA
+
+split -b 3 fileA tmp
+ls -C
+
+cat tmpaa
+echo
+cat tmpab
+echo
+cat tmpac
+echo
+cat tmpad
+echo
+cat tmpae
+echo
