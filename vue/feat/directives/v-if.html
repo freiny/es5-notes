@@ -1,18 +1,18 @@
 <html>
 <body>
 	<div id="app">
-		<div v-show="true">true</div>
-		<div v-show="false">false</div>
-		<div v-show="true || false">true || false</div>
-		<div v-show="parm">{{parm}}</div>
-		<div v-show="parm.name === 'carl'">parm.name === {{parm.name}}</div>
+		<div v-if="true">true</div>
+		<div v-if="false">false</div>
+		<div v-if="true || false">true || false</div>
+		<div v-if="parm">{{parm}}</div>
+		<div v-if="parm.name === 'carl'">parm.name === {{parm.name}}</div>
 	</div>
 </body>
 
 <script src="vue.js"></script>
 <script>
 // ----------------------------------------------------------------
-// v-show determines if element will be displayed in DOM
+// v-if determines if tag will exist in DOM
 var app = new Vue({
 	el: '#app',
 	data: {
