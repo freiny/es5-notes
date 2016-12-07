@@ -1,0 +1,25 @@
+<html>
+<body>
+	<div id="app">
+		<div v-if="parm.age >= 21">{{parm.age}}: Free Beer for You!</div>
+		<div v-else>{{parm.age}}: No Beer for You!</div>
+
+		<div v-if="parm.age + 5 >= 21">{{parm.age + 5}}: Free Beer for You!</div>
+		<div v-else>{{parm.age + 5}}: No Beer for You!</div>
+	</div>
+</body>
+
+<script src="vue.js"></script>
+<script>
+// ----------------------------------------------------------------
+// v-if determines if tag will exist in DOM
+var app = new Vue({
+	el: '#app',
+	data: {
+		parm: {age:18}
+	}
+});
+// ----------------------------------------------------------------
+</script>
+
+</html>
