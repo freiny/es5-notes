@@ -1,0 +1,28 @@
+<html>
+<head>
+<style>
+[v-cloak] { display: none; }
+</style>
+</head>
+
+<body>
+	<div id="app">
+		<div>{{parm}}</div>
+		<div v-cloak>{{parm}}</div>
+	</div>
+</body>
+
+<script src="vue.js"></script>
+<script>
+// ----------------------------------------------------------------
+// v-cloak waits for the page to finish loading before rendering the content
+var app = new Vue({
+	el: '#app',
+	data: {
+		parm: 'X'
+	}
+});
+// ----------------------------------------------------------------
+</script>
+
+</html>
