@@ -1,0 +1,35 @@
+<html>
+<body>
+	<div id="app">
+		<div v-text="user.name"></div>
+		<div v-text="user.age"></div>
+		<div v-text="user"></div>
+		<div v-text="'random '+user.name+' text'"></div>
+	</div>
+</body>
+
+<script src="vue.js"></script>
+<script>
+// ----------------------------------------------------------------
+// bind object to view
+
+var app = new Vue({
+	el: '#app',
+	data: {
+		user: {
+			name: 'Pat',
+			age: '24',
+			phone: '123-456-7890'
+		}
+	}
+});
+
+// ----------------------------------------------------------------
+// dynamically update bound object after 2 second delay
+setTimeout(function(){
+	app.user.name = 'Hello ' + app.user.name;
+}, 2000);
+// ----------------------------------------------------------------
+</script>
+
+</html>
