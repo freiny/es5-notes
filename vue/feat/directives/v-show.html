@@ -1,0 +1,24 @@
+<html>
+<body>
+	<div id="app">
+		<div v-show="true">true</div>
+		<div v-show="false">false</div>
+		<div v-show="true || false">true || false</div>
+		<div v-show="parm">{{parm}}</div>
+		<div v-show="parm.name === 'carl'">parm.name === {{parm.name}}</div>
+	</div>
+</body>
+
+<script src="vue.js"></script>
+<script>
+// ----------------------------------------------------------------
+var app = new Vue({
+	el: '#app',
+	data: {
+		parm: {name:'carl'}
+	}
+});
+// ----------------------------------------------------------------
+</script>
+
+</html>
