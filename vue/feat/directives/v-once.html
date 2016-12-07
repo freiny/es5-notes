@@ -1,0 +1,26 @@
+<html>
+<body>
+	<div id="app">
+		<div>hello {{parm}}</div>
+		<div v-once>hello {{parm}}</div>
+	</div>
+</body>
+
+<script src="vue.js"></script>
+<script>
+// ----------------------------------------------------------------
+// v-once only allows the bound variable to be changed once
+var app = new Vue({
+	el: '#app',
+	data: {
+		parm: 'people'
+	}
+});
+
+setTimeout(function(){
+	app.parm = 'WORLD'
+}, 2000);
+// ----------------------------------------------------------------
+</script>
+
+</html>
